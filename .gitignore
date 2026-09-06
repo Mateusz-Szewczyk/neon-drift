@@ -1,0 +1,18 @@
+# OS junk
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (unused at runtime, harmless to ignore if ever added for tooling)
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Logs
+*.log
