@@ -648,6 +648,12 @@
 
   function activatePowerUpFn(type, now) {
     activePowerUp = type;
+    // Only one power-up is held at a time (spec: picking up a new one
+    // replaces it). Without this, a previously-collected shield would
+    // stay flagged active (and keep granting invulnerability) even after
+    // switching to magnet/slowmo, since shieldActive is a separate flag
+    // from activePowerUp.
+    player.shieldActive = false;
     if (type === 'shield') {
       player.shieldActive = true;
       powerUpEndsAt = 0;
